@@ -61,13 +61,6 @@ class SoftwareInteligenzaArtificiale(object):
 
         self.webcontroller = WebController()
 
-        base_filename = r'Database\Files\phd_session.json'
-        i = 0
-        while os.path.isfile(base_filename):
-            i += 1
-            base_filename = r'Database\Files\phd_session{}.json'.format(i)
-        self.filename_for_phd_records = base_filename
-
     def move_resource(self, source_path: str, destination_path: str):
         os.rename(source_path, destination_path)
 
@@ -189,32 +182,6 @@ class SoftwareInteligenzaArtificiale(object):
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
         task_api.insert_task_to_tasklist(
             task, 0, f'created at : {datetime.datetime.now()}', dt)
-
-    def start_phd_session(self, filename, logger: logging.Logger):
-        start_time = str(datetime.datetime.now())
-        logger.info(f'session started at {start_time}')
-        session_data = input('What did you do for the session?')
-        session_ = {
-            'Session id': str(datetime.datetime.now().strftime(FORMAT_SESSION_ID)),
-            'start time': start_time,
-            'end time': '',
-            'description': session_data
-        }
-        logger.info(session_)
-        with File(filename, "w") as outfile:
-            json.dump(session_, outfile, indent=4)
-
-    def stop_phd_session(self, filename):
-        with File(filename, "r") as outfile:
-            dictionary = json.load(outfile)
-        dictionary["end time"] = str(datetime.datetime.now())
-        logger.info(dictionary)
-
-        with File(filename, "w") as outfile:
-            json.dump(dictionary, outfile)
-
-        os.system(
-            r'start https://www.myjobshop.shef.ac.uk/profile/timesheets.aspx?FilterOption=3')
 
     def tell_the_time(self):
         engine = pyttsx3.init()
@@ -464,7 +431,7 @@ class SoftwareInteligenzaArtificiale(object):
         elif 'open commands' in command:
             # sofia commands
             os.system(
-                'start https://github.com/kesler20/Sofia/blob/master/Context/speaker.py')
+                'start https://github.com/kesler20/sofia_silent/blob/master/Context/speaker.py')
 
         elif 'router' in command:
             os.system(r'start https://main.d2lxk97p0eyatl.amplifyapp.com/')
@@ -485,11 +452,11 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace(' ', r'%20')
             os.system(f'start https://open.spotify.com/search/{command}')
 
-        elif 'phd' in command:
-            self.start_phd_session(self.filename_for_phd_records, logger)
-
-        elif 'end session' in command:
-            self.stop_phd_session(self.filename_for_phd_records)
+        elif "phd work" in command:
+            os.system("start https://github.com/kesler20/SOP/blob/master/productivity/PhD_work.md")
+        
+        elif "software sop" in command:
+            os.system("start https://github.com/kesler20/SOP/blob/master/coding/Software_development.md")
 
         elif 'google docs' in command:
             os.system(
