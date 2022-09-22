@@ -381,7 +381,7 @@ class SoftwareInteligenzaArtificiale(object):
             os.system(r'start "C:\Users\CBE-User 05\Downloads"')
 
         elif 'launch sofia' in command:
-            os.system(r'start code "C:\Users\CBE-User 05\Protocol\Sofia"')
+            os.system(r'start code "C:\Users\CBE-User 05\Protocol\sofia_silent"')
 
         elif 'clean javascript' in command:
             os.system(
