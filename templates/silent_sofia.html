@@ -23,18 +23,40 @@
       "
     >
       <form method="post">
-        <input type="text" id="input-box" name="command" placeholder="Enter a Sofia Command" />
+        <input
+          type="text"
+          id="input-box"
+          name="command"
+          placeholder="Enter a Sofia Command"
+        />
         <a>
           <button class="btn primary-btn" type="submit">Send command</button>
         </a>
       </form>
-      <a href="/listening">
-        <button class="btn primary-btn" >Start Listening</button>
+      <a href="/listening" id="listening-btn">
+        <button class="btn primary-btn">Start Listening</button>
       </a>
     </div>
     <script>
-      const inputBox = document.querySelector("#input-box")
-      inputBox.focus()
+      // get all the DOM elements required
+      const inputBox = document.querySelector("#input-box");
+      const listeningBtn = document.querySelector("#listening-btn");
+
+      inputBox.focus();
+
+      // store the sequence of keys pressed by the user
+      let sequenceOfKeys = [];
+      window.onkeydown = (e) => {
+        sequenceOfKeys.push(e.key);
+        if (sequenceOfKeys.length > 2) {
+          sequenceOfKeys = [];
+        }
+        if (sequenceOfKeys.includes("Control") && sequenceOfKeys.includes("l")) {
+          // if the sequence matches the desired click the listening btn
+          console.log("clicked");
+          listeningBtn.click();
+        }
+      };
     </script>
   </body>
 </html>

@@ -17,10 +17,11 @@ def home():
 @app.route('/listening')
 def listen():
     listener = Recognizer()
+    audio_engine = SoftwareInteligenzaArtificiale()
     engine = pyttsx3.init()
+    
     engine.say('      I am listening')
     engine.runAndWait()
-    audio_engine = SoftwareInteligenzaArtificiale()
     audio_engine.start_listening(listener, engine)
     return redirect('/')
 

@@ -64,7 +64,7 @@ class SoftwareInteligenzaArtificiale(object):
     def move_resource(self, source_path: str, destination_path: str):
         os.rename(source_path, destination_path)
 
-    def listen_to_command(self, listener: speech_recognition.Recognizer, default_command: str):
+    def listen_to_command(self, listener: speech_recognition.Recognizer):
         with speech_recognition.Microphone() as source:
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
@@ -492,9 +492,7 @@ class SoftwareInteligenzaArtificiale(object):
 
     def start_listening(self, listener: speech_recognition.Recognizer, engine: pyttsx3.engine):
         try:
-            time.sleep(1)
-            command = self.listen_to_command(
-                listener, 'Listening')
+            command = self.listen_to_command(listener)
             print(f"\n COMMAND {command}  \n")
             self.run_context(command)
         except speech_recognition.UnknownValueError:
