@@ -6,7 +6,7 @@ import os
 import datetime
 import speech_recognition
 import logging
-import shutil
+import pyttsx3
 
 logging.basicConfig(
     filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
@@ -65,9 +65,7 @@ class SoftwareInteligenzaArtificiale(object):
         os.rename(source_path, destination_path)
 
     def listen_to_command(self, listener: speech_recognition.Recognizer, default_command: str):
-        command = default_command
         with speech_recognition.Microphone() as source:
-            print(f'command', command)
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
             command = command.lower()
@@ -232,12 +230,13 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'routine' in command:
             self.webcontroller.initialize_workflow()
-        
+
         elif "open word document" in command:
             os.system("start winword.exe")
-        
+
         elif "new note" in command:
-            os.system(r'start code "C:\Users\CBE-User 05\protocol\config_settings\note.md"')
+            os.system(
+                r'start code "C:\Users\CBE-User 05\protocol\config_settings\note.md"')
 
         elif 'push files' in command:
             print(command)
@@ -453,10 +452,14 @@ class SoftwareInteligenzaArtificiale(object):
             os.system(f'start https://open.spotify.com/search/{command}')
 
         elif "phd work" in command:
-            os.system("start https://github.com/kesler20/SOP/blob/master/productivity/PhD_work.md")
-        
+            os.system(
+                r'start winword.exe "C:\Users\CBE-User 05\OneDrive\Documents\Back log of tasks to complete.docx"')
+            os.system(
+                "start https://github.com/kesler20/SOP/blob/master/productivity/PhD_work.md")
+
         elif "software sop" in command:
-            os.system("start https://github.com/kesler20/SOP/blob/master/coding/Software_development.md")
+            os.system(
+                "start https://github.com/kesler20/SOP/blob/master/coding/Software_development.md")
 
         elif 'google docs' in command:
             os.system(
@@ -487,16 +490,13 @@ class SoftwareInteligenzaArtificiale(object):
         else:
             pass
 
-    def run_loop(self, listener: speech_recognition.Recognizer):
-        stop_command = False
-        while not stop_command:
-            try:
-                command = self.listen_to_command(
-                    listener, 'Listening')
-                if 'stop' in command:
-                    stop_command = True
-                else:
-                    print(command)
-                    self.run_context(command)
-            except speech_recognition.UnknownValueError:
-                pass
+    def start_listening(self, listener: speech_recognition.Recognizer, engine: pyttsx3.engine):
+        try:
+            time.sleep(1)
+            command = self.listen_to_command(
+                listener, 'Listening')
+            print(f"\n COMMAND {command}  \n")
+            self.run_context(command)
+        except speech_recognition.UnknownValueError:
+            engine.say(" sorry I didn't get that")
+            engine.runAndWait()
