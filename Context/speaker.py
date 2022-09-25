@@ -188,6 +188,20 @@ class SoftwareInteligenzaArtificiale(object):
         engine.say(f'The Current Time is {currentTime}')
         engine.runAndWait()
 
+    def open_folder(self):
+        pass
+
+    def launch_folder_code(self):
+        pass
+
+    def launch_folder_explorer(self):
+        pass
+
+    def create_file(self, directory, filename):
+        os.chdir(r"C:\Users\CBE-User 05\protocol\{}".format(directory))
+        os.system(f"echo > {filename}")
+        os.system(os.getcwd())
+
     def give_start_up_instructions(self):
         engine = pyttsx3.init()
         engine.say(
