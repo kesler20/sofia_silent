@@ -1,0 +1,92 @@
+INFO - 2022-09-26 06:47:59,934 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-26 06:47:59,934 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-26 06:48:00,128 - <google.oauth2.credentials.Credentials object at 0x000001E5E18EBA90>
+INFO - 2022-09-26 06:48:00,868 - {'kind': 'tasks#task', 'id': 'bWdLRmxiWktnRDRXS2JxZQ', 'etag': '"MjAxODkzNzc1Nw"', 'title': 'remember to decide what to eat and wear in the first day of the week for the entire week', 'updated': '2022-09-26T05:48:00.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/MTE3NjczNjEzNTAxNDc2ODY5NzY6MDow/tasks/bWdLRmxiWktnRDRXS2JxZQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-26 06:47:59.934231', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:47,496 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:47,497 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:47,734 - <google.oauth2.credentials.Credentials object at 0x0000019448FAAEC0>
+INFO - 2022-09-27 07:14:48,422 - {'kind': 'tasks#task', 'id': 'em56aDNwZnY1bV9RTEFmMg', 'etag': '"MjEwNjk0NDI5MQ"', 'title': 'run sofia weekly schema', 'updated': '2022-09-27T06:14:47.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/em56aDNwZnY1bV9RTEFmMg', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:47.496400', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:48,422 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:48,422 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:48,430 - <google.oauth2.credentials.Credentials object at 0x0000019449AC9C00>
+INFO - 2022-09-27 07:14:48,931 - {'kind': 'tasks#task', 'id': 'M3hxR1AyTmNsN2tuVnExbQ', 'etag': '"MjEwNjk0NDc5Mg"', 'title': 'run sofia functions', 'updated': '2022-09-27T06:14:48.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/M3hxR1AyTmNsN2tuVnExbQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:48.422846', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:48,931 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:48,931 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:48,931 - <google.oauth2.credentials.Credentials object at 0x0000019448FA9000>
+INFO - 2022-09-27 07:14:49,447 - {'kind': 'tasks#task', 'id': 'WUZ4MzRqUkZ2MHpUd3ZSTQ', 'etag': '"MjEwNjk0NTMxMQ"', 'title': 'put room in order', 'updated': '2022-09-27T06:14:48.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/WUZ4MzRqUkZ2MHpUd3ZSTQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:48.931132', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:49,448 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:49,448 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:49,448 - <google.oauth2.credentials.Credentials object at 0x0000019449ACAC50>
+INFO - 2022-09-27 07:14:49,946 - {'kind': 'tasks#task', 'id': 'UDVVak9uVlZuczI1SXRMLQ', 'etag': '"MjEwNjk0NTgxNw"', 'title': 'put deodorant', 'updated': '2022-09-27T06:14:49.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/UDVVak9uVlZuczI1SXRMLQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:49.448079', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:49,946 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:49,946 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:49,954 - <google.oauth2.credentials.Credentials object at 0x0000019449AC8CD0>
+INFO - 2022-09-27 07:14:50,470 - {'kind': 'tasks#task', 'id': 'RXgxeml0N0tZdTJVWExQbA', 'etag': '"MjEwNjk0NjMzNg"', 'title': 'wash face', 'updated': '2022-09-27T06:14:49.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/RXgxeml0N0tZdTJVWExQbA', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:49.946096', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:50,470 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:50,470 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:50,478 - <google.oauth2.credentials.Credentials object at 0x0000019449ACA980>
+INFO - 2022-09-27 07:14:51,020 - {'kind': 'tasks#task', 'id': 'b3dYODltUVVKUEJQckI3Nw', 'etag': '"MjEwNjk0Njg4MQ"', 'title': 'stretching and abs', 'updated': '2022-09-27T06:14:50.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/b3dYODltUVVKUEJQckI3Nw', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:50.470370', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:51,020 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:51,020 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:51,020 - <google.oauth2.credentials.Credentials object at 0x0000019449ACA740>
+INFO - 2022-09-27 07:14:51,620 - {'kind': 'tasks#task', 'id': 'SGpoM2lSUDRMOEtPZXZ6ag', 'etag': '"MjEwNjk0NzQxNw"', 'title': 'use 10 fast fingers (30 mins)complete 1 hackerank problem (1 hour)', 'updated': '2022-09-27T06:14:50.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/SGpoM2lSUDRMOEtPZXZ6ag', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:51.020359', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:51,620 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:51,620 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:51,632 - <google.oauth2.credentials.Credentials object at 0x0000019449ACB640>
+INFO - 2022-09-27 07:14:52,129 - {'kind': 'tasks#task', 'id': 'V01FSU9USmVoQllNZ0JYUw', 'etag': '"MjEwNjk0Nzc0Mw"', 'title': 'weight and update gymnasium', 'updated': '2022-09-27T06:14:51.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/V01FSU9USmVoQllNZ0JYUw', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:51.620068', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:52,129 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:52,129 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:52,129 - <google.oauth2.credentials.Credentials object at 0x0000019449AC9F30>
+INFO - 2022-09-27 07:14:52,612 - {'kind': 'tasks#task', 'id': 'OGJCWkh3YnpmYXp5ZlU3Yg', 'etag': '"MjEwNjk0ODIyNw"', 'title': 'eat (30 mins)', 'updated': '2022-09-27T06:14:51.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/OGJCWkh3YnpmYXp5ZlU3Yg', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:52.129619', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:52,612 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:52,612 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:52,620 - <google.oauth2.credentials.Credentials object at 0x0000019449ACBBE0>
+INFO - 2022-09-27 07:14:53,127 - {'kind': 'tasks#task', 'id': 'azIyTG5Rd3J1bXQtNGtPRQ', 'etag': '"MjEwNjk0ODc0Mw"', 'title': 'drink water (1 liter a day)', 'updated': '2022-09-27T06:14:52.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/azIyTG5Rd3J1bXQtNGtPRQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:52.612557', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:53,127 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:53,127 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:53,135 - <google.oauth2.credentials.Credentials object at 0x0000019448FABEE0>
+INFO - 2022-09-27 07:14:53,670 - {'kind': 'tasks#task', 'id': 'QVdvN2JmVDMyeW0tMGZxVg', 'etag': '"MjEwNjk0OTI1Mw"', 'title': 'fill water bottles', 'updated': '2022-09-27T06:14:52.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/QVdvN2JmVDMyeW0tMGZxVg', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:53.127764', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:53,670 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:53,670 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:53,670 - <google.oauth2.credentials.Credentials object at 0x0000019449ACBF40>
+INFO - 2022-09-27 07:14:54,144 - {'kind': 'tasks#task', 'id': 'by11c1dWQi1HR1plbDNVQQ', 'etag': '"MjEwNjk1MDAxMw"', 'title': 'brush teeth', 'updated': '2022-09-27T06:14:53.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/by11c1dWQi1HR1plbDNVQQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:53.670425', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:54,144 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:54,144 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:54,152 - <google.oauth2.credentials.Credentials object at 0x0000019449F974F0>
+INFO - 2022-09-27 07:14:54,653 - {'kind': 'tasks#task', 'id': 'UFFmdWV2NjdMa0xfcVZySQ', 'etag': '"MjEwNjk1MDUxNg"', 'title': 'put cream on', 'updated': '2022-09-27T06:14:53.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/UFFmdWV2NjdMa0xfcVZySQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:54.144785', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:54,653 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:54,653 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:54,661 - <google.oauth2.credentials.Credentials object at 0x0000019449F970A0>
+INFO - 2022-09-27 07:14:55,178 - {'kind': 'tasks#task', 'id': 'NUxXRC0tNVVFSnRzNEY0cA', 'etag': '"MjEwNjk1MDc4Ng"', 'title': 'save to database', 'updated': '2022-09-27T06:14:54.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/YlFkMmtiVjdDN2xMdnF2Mg/tasks/NUxXRC0tNVVFSnRzNEY0cA', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:54.653559', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:55,178 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:55,178 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:55,178 - <google.oauth2.credentials.Credentials object at 0x0000019449F97160>
+INFO - 2022-09-27 07:14:55,719 - {'kind': 'tasks#task', 'id': 'WWVEMVg5TUp4VDlTTTZaMw', 'etag': '"MjEwNjk1MTU0Nw"', 'title': 'brush teeth', 'updated': '2022-09-27T06:14:54.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/WWVEMVg5TUp4VDlTTTZaMw', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:55.178242', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:55,719 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:55,719 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:55,719 - <google.oauth2.credentials.Credentials object at 0x0000019449F94CA0>
+INFO - 2022-09-27 07:14:56,335 - {'kind': 'tasks#task', 'id': 'bndTci1NckxPUndQSzhMZg', 'etag': '"MjEwNjk1MTg0Ng"', 'title': 'read', 'updated': '2022-09-27T06:14:55.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/bndTci1NckxPUndQSzhMZg', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:55.719429', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:56,335 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:56,335 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:56,335 - <google.oauth2.credentials.Credentials object at 0x0000019449F580D0>
+INFO - 2022-09-27 07:14:56,850 - {'kind': 'tasks#task', 'id': 'YTlYa05XZ1BJY1FXWVFNRQ', 'etag': '"MjEwNjk1MjQzMw"', 'title': 'put power bank on charge', 'updated': '2022-09-27T06:14:56.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/YTlYa05XZ1BJY1FXWVFNRQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:56.335742', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:56,850 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:56,850 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:56,858 - <google.oauth2.credentials.Credentials object at 0x0000019449F59ED0>
+INFO - 2022-09-27 07:14:57,368 - {'kind': 'tasks#task', 'id': 'RkZYOXFGY1dKLUpkV09RTQ', 'etag': '"MjEwNjk1MjcxNg"', 'title': 'put headphones on charge', 'updated': '2022-09-27T06:14:56.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/RkZYOXFGY1dKLUpkV09RTQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:56.850204', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:57,368 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:57,368 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:57,368 - <google.oauth2.credentials.Credentials object at 0x0000019449F5BAC0>
+INFO - 2022-09-27 07:14:57,859 - {'kind': 'tasks#task', 'id': 'TmZwZ1daQkZpdGZBYm56YQ', 'etag': '"MjEwNjk1MzQ2OA"', 'title': 'put earpods on charge', 'updated': '2022-09-27T06:14:57.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/TmZwZ1daQkZpdGZBYm56YQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:57.368412', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:57,859 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:57,859 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:57,875 - <google.oauth2.credentials.Credentials object at 0x0000019449F5BFD0>
+INFO - 2022-09-27 07:14:58,478 - {'kind': 'tasks#task', 'id': 'amdaOE1qaUFnX0EtQm8ycA', 'etag': '"MjEwNjk1Mzc2Mw"', 'title': 'put phone on charge', 'updated': '2022-09-27T06:14:57.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/amdaOE1qaUFnX0EtQm8ycA', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:57.859316', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:58,478 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:58,478 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:58,487 - <google.oauth2.credentials.Credentials object at 0x0000019449F5A950>
+INFO - 2022-09-27 07:14:58,995 - {'kind': 'tasks#task', 'id': 'bDhPM0JGMlF6cktVbWNMdQ', 'etag': '"MjEwNjk1NDMxNg"', 'title': 'track calories by filling the diet-track file', 'updated': '2022-09-27T06:14:58.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/bDhPM0JGMlF6cktVbWNMdQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:58.478922', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}
+INFO - 2022-09-27 07:14:58,995 - ['https://www.googleapis.com/auth/tasks']
+INFO - 2022-09-27 07:14:58,995 - C:\Users\CBE-User 05\protocol\sofia_silent\Google_Api\config_files\token_tasks_v1.pickle
+INFO - 2022-09-27 07:14:58,995 - <google.oauth2.credentials.Credentials object at 0x0000019449F59F60>
+INFO - 2022-09-27 07:14:59,475 - {'kind': 'tasks#task', 'id': 'dUUtVEVqUWl0RHU0VDdnQQ', 'etag': '"MjEwNjk1NDgyOQ"', 'title': 'clean watch later playlist', 'updated': '2022-09-27T06:14:58.000Z', 'selfLink': 'https://www.googleapis.com/tasks/v1/lists/UTJWZk9xS01Xc3d5SG9tdQ/tasks/dUUtVEVqUWl0RHU0VDdnQQ', 'position': '00000000000000000000', 'notes': 'created at : 2022-09-27 07:14:58.995897', 'status': 'needsAction', 'due': '2022-09-26T00:00:00.000Z', 'links': []}

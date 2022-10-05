@@ -188,14 +188,14 @@ class SoftwareInteligenzaArtificiale(object):
         engine.say(f'The Current Time is {currentTime}')
         engine.runAndWait()
 
-    def open_folder(self):
-        pass
+    def launch_folder_code(self, folder_path: str):
+        os.system(r"start code {}".format(folder_path))
 
-    def launch_folder_code(self):
-        pass
-
-    def launch_folder_explorer(self):
-        pass
+    def launch_folder_explorer(self, folder_path: str):
+        # the input needs to be a folder because you cannot cd into files
+        os.chdir(folder_path)
+        os.system("start .")
+        os.chdir(os.getcwd())
 
     def create_file(self, directory, filename):
         os.chdir(r"C:\Users\CBE-User 05\protocol\{}".format(directory))
@@ -385,13 +385,19 @@ class SoftwareInteligenzaArtificiale(object):
                 r'start code "C:\Users\CBE-User 05\Protocol\Config_settings"')
 
         elif 'document' in command:
-            os.system(f'start "C:/Users/CBE-User 05/OneDrive/Documents"')
+            os.chdir("C://Users//CBE-User 05//OneDrive//Documents")
+            os.system("start .")
+            os.chdir(os.getcwd())
 
         elif 'protocol' in command:
-            os.system(r'start "C:\Users\CBE-User 05\Protocol"')
+            os.chdir(r"C:\Users\CBE-User 05\Protocol")
+            os.system("start .")
+            os.chdir(os.getcwd())
 
         elif 'downloads' in command:
-            os.system(r'start "C:\Users\CBE-User 05\Downloads"')
+            os.chdir(r"C:\Users\CBE-User 05\Downloads")
+            os.system("start .")
+            os.chdir(os.getcwd())
 
         elif 'launch sofia' in command:
             os.system(r'start code "C:\Users\CBE-User 05\Protocol\sofia_silent"')
@@ -406,22 +412,22 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'web notes' in command:
             os.system(
-                r'start "C:/Users/CBE-User 05/OneDrive/Documents/Web_development_notes.docx"')
+                r"C:/Users/CBE-User 05/OneDrive/Documents/Web_development_notes.docx")
 
         elif 'what is the time' in command:
             self.tell_the_time()
 
         elif 'algorithms' in command:
             os.system(
-                'start "C:/Users/CBE-User 05/OneDrive/Documents/DATA_STRUCTURES_AND_BIG_OH.docx"')
+                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/DATA_STRUCTURES_AND_BIG_OH.docx"')
 
         elif 'python algos' in command:
             os.system(
-                'start "C:/Users/CBE-User 05/OneDrive/Documents/Data_Structures_and_Algorithms_in_Python.pdf"')
+                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/Data_Structures_and_Algorithms_in_Python.pdf"')
 
         elif 'clean code' in command:
             os.system(
-                'start "C:/Users/CBE-User 05/OneDrive/Documents/Clean_Code.docx"')
+                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/Clean_Code.docx"')
 
         elif 'current working directory' in command:
             os.system(f'start "{os.getcwd()}"')
@@ -440,7 +446,19 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace('create file', '')
             command = command.replace(' ', '.')
             os.system(f'echo > {command}')
+        
+        elif "create file in protocol" in command:
+            command = command.replace('create file in protocol',"")
+            self.create_file(command)
 
+        elif "open code" in command:
+            command = command.replace("open code","")
+            self.launch_folder_code(command)
+
+        elif "open explorer" in command:
+            command = command.replace("open explorer","")
+            self.launch_folder_explorer(command)
+            
         elif 'open commands' in command:
             # sofia commands
             os.system(
@@ -499,7 +517,9 @@ class SoftwareInteligenzaArtificiale(object):
             os.system("start https://drawsql.app/diagrams ")
 
         elif 'recycle bin' in command:
-            os.system(r'start "C:\Users\CBE-User 05\Recycle Bin"')
+            os.chdir(r"C:\Users\CBE-User 05\Recycle Bin")
+            os.system("start .")
+            os.chdir(os.getcwd())
 
         else:
             pass
