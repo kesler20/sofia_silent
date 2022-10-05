@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 import logging 
 
 logging.basicConfig(
-    filename=r'"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log"',
+    filename=r'"C:\Users\Uchek\Protocol\Sofia\logs_src\main_logs.log"',
     level=logging.DEBUG,
     format='%(asctime)s:%(levelname)s:%(message)s)'
 )

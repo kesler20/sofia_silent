@@ -38,17 +38,17 @@
 2022-09-22 18:26:02,125:DEBUG:Finished Request)
 2022-09-22 18:26:02,126:ERROR:Exception on / [POST])
 Traceback (most recent call last):
-  File "C:\Users\CBE-User 05\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 2077, in wsgi_app
+  File "C:\Users\Uchek\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\CBE-User 05\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1525, in full_dispatch_request
+  File "C:\Users\Uchek\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1525, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "C:\Users\CBE-User 05\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1523, in full_dispatch_request
+  File "C:\Users\Uchek\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1523, in full_dispatch_request
     rv = self.dispatch_request()
-  File "C:\Users\CBE-User 05\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1509, in dispatch_request
+  File "C:\Users\Uchek\AppData\Roaming\Python\Python310\site-packages\flask\app.py", line 1509, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\CBE-User 05\protocol\sofia\app.py", line 10, in home
+  File "C:\Users\Uchek\protocol\sofia\app.py", line 10, in home
     audio_engine.run_context(request.form["command"])
-  File "C:\Users\CBE-User 05\protocol\sofia\Context\speaker.py", line 280, in run_context
+  File "C:\Users\Uchek\protocol\sofia\Context\speaker.py", line 280, in run_context
     os.chdir(command)
 FileNotFoundError: [WinError 2] The system cannot find the file specified: 'push files'
 2022-09-22 18:26:02,143:INFO:127.0.0.1 - - [22/Sep/2022 18:26:02] "[35m[1mPOST / HTTP/1.1[0m" 500 -)
@@ -83,7 +83,7 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'push
 2022-09-22 18:27:39,778:DEBUG:Finished Request)
 2022-09-22 18:27:41,847:INFO:127.0.0.1 - - [22/Sep/2022 18:27:41] "POST / HTTP/1.1" 200 -)
 2022-09-22 18:27:41,862:INFO:127.0.0.1 - - [22/Sep/2022 18:27:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -)
-2022-09-22 18:28:04,428:INFO: * Detected change in 'C:\\Users\\CBE-User 05\\protocol\\sofia\\Context\\speaker.py', reloading)
+2022-09-22 18:28:04,428:INFO: * Detected change in 'C:\\Users\\Uchek\\protocol\\sofia\\Context\\speaker.py', reloading)
 2022-09-22 18:28:04,774:INFO: * Restarting with stat)
 2022-09-22 18:28:08,051:WARNING: * Debugger is active!)
 2022-09-22 18:28:08,055:INFO: * Debugger PIN: 255-250-541)
@@ -102,7 +102,7 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'push
 2022-09-22 18:28:22,621:INFO:127.0.0.1 - - [22/Sep/2022 18:28:22] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -)
 2022-09-22 18:28:22,951:INFO:127.0.0.1 - - [22/Sep/2022 18:28:22] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -)
 2022-09-22 18:28:23,216:INFO:127.0.0.1 - - [22/Sep/2022 18:28:23] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -)
-2022-09-22 18:28:57,916:INFO: * Detected change in 'C:\\Users\\CBE-User 05\\protocol\\sofia\\Context\\speaker.py', reloading)
+2022-09-22 18:28:57,916:INFO: * Detected change in 'C:\\Users\\Uchek\\protocol\\sofia\\Context\\speaker.py', reloading)
 2022-09-22 18:28:58,067:INFO: * Restarting with stat)
 2022-09-22 18:28:59,255:WARNING: * Debugger is active!)
 2022-09-22 18:28:59,258:INFO: * Debugger PIN: 255-250-541)
@@ -118,7 +118,7 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'push
 2022-09-22 18:29:16,373:DEBUG:Finished Request)
 2022-09-22 18:29:18,760:INFO:127.0.0.1 - - [22/Sep/2022 18:29:18] "POST / HTTP/1.1" 200 -)
 2022-09-22 18:29:18,771:INFO:127.0.0.1 - - [22/Sep/2022 18:29:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -)
-2022-09-22 18:30:02,459:INFO: * Detected change in 'C:\\Users\\CBE-User 05\\protocol\\sofia\\Context\\speaker.py', reloading)
+2022-09-22 18:30:02,459:INFO: * Detected change in 'C:\\Users\\Uchek\\protocol\\sofia\\Context\\speaker.py', reloading)
 2022-09-22 18:30:02,632:INFO: * Restarting with stat)
 2022-09-22 18:30:04,036:WARNING: * Debugger is active!)
 2022-09-22 18:30:04,040:INFO: * Debugger PIN: 255-250-541)
@@ -137,7 +137,7 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified: 'push
 2022-09-22 18:30:34,139:INFO:127.0.0.1 - - [22/Sep/2022 18:30:34] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -)
 2022-09-22 18:30:34,471:INFO:127.0.0.1 - - [22/Sep/2022 18:30:34] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -)
 2022-09-22 18:30:34,737:INFO:127.0.0.1 - - [22/Sep/2022 18:30:34] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -)
-2022-09-22 18:30:51,050:INFO: * Detected change in 'C:\\Users\\CBE-User 05\\protocol\\sofia\\Context\\speaker.py', reloading)
+2022-09-22 18:30:51,050:INFO: * Detected change in 'C:\\Users\\Uchek\\protocol\\sofia\\Context\\speaker.py', reloading)
 2022-09-22 18:30:51,194:INFO: * Restarting with stat)
 2022-09-22 18:30:52,687:WARNING: * Debugger is active!)
 2022-09-22 18:30:52,690:INFO: * Debugger PIN: 255-250-541)

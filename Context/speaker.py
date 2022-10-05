@@ -9,7 +9,7 @@ import logging
 import pyttsx3
 
 logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
+    filename=r"C:\Users\Uchek\Protocol\Sofia\logs_src\main_logs.log",
     level=logging.DEBUG,
     format='%(asctime)s:%(levelname)s:%(message)s)'
 )
@@ -198,7 +198,7 @@ class SoftwareInteligenzaArtificiale(object):
         os.chdir(os.getcwd())
 
     def create_file(self, directory, filename):
-        os.chdir(r"C:\Users\CBE-User 05\protocol\{}".format(directory))
+        os.chdir(r"C:\Users\Uchek\protocol\{}".format(directory))
         os.system(f"echo > {filename}")
         os.system(os.getcwd())
 
@@ -217,11 +217,11 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace("clone", "")
             command = command.replace(" ", "")
             os.system(f"git clone https://github.com/kesler20/{command}")
-            self.move_resource(r"C:\Users\CBE-User 05\protocol\sofia\{}".format(
-                command), r"C:\Users\CBE-User 05\protocol\{}".format(command))
+            self.move_resource(r"C:\Users\Uchek\protocol\sofia\{}".format(
+                command), r"C:\Users\Uchek\protocol\{}".format(command))
             try:
                 os.remove(
-                    r"C:\Users\CBE-User 05\protocol\sofia\{}".format(command))
+                    r"C:\Users\Uchek\protocol\sofia\{}".format(command))
             except:
                 pass
 
@@ -229,11 +229,11 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace("clone", "")
             command = command.replace(" ", "")
             os.system(f"git clone {command}")
-            self.move_resource(r"C:\Users\CBE-User 05\protocol\sofia\{}".format(
-                command), r"C:\Users\CBE-User 05\protocol\{}".format(command))
+            self.move_resource(r"C:\Users\Uchek\protocol\sofia\{}".format(
+                command), r"C:\Users\Uchek\protocol\{}".format(command))
             try:
                 os.remove(
-                    r"C:\Users\CBE-User 05\protocol\sofia\{}".format(command))
+                    r"C:\Users\Uchek\protocol\sofia\{}".format(command))
             except:
                 pass
 
@@ -250,7 +250,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "new note" in command:
             os.system(
-                r'start code "C:\Users\CBE-User 05\protocol\config_settings\note.md"')
+                r'start code "C:\Users\Uchek\protocol\config_settings\note.md"')
 
         elif 'push files' in command:
             print(command)
@@ -270,9 +270,9 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "open journal" in command:
             os.system(
-                r'start code "C:\Users\CBE-User 05\Protocol\github\journal_frontend"')
+                r'start code "C:\Users\Uchek\Protocol\github\journal_frontend"')
             os.system(
-                r'start code "C:\Users\CBE-User 05\Protocol\github\journal_backend"')
+                r'start code "C:\Users\Uchek\Protocol\github\journal_backend"')
 
         elif "genetic engineering" in command:
             os.system("start https://github.com/Sheffield-iGEM ")
@@ -288,11 +288,11 @@ class SoftwareInteligenzaArtificiale(object):
             )
 
         elif 'save to database' in command:
-            os.system(r'cd "C:\Users\CBE-User 05\Protocol\protocol_backend"')
+            os.system(r'cd "C:\Users\Uchek\Protocol\protocol_backend"')
             os.system(
-                r'python "C:\Users\CBE-User 05\Protocol\protocol_backend\sql_db_interface\database_interface.py"')
+                r'python "C:\Users\Uchek\Protocol\protocol_backend\sql_db_interface\database_interface.py"')
             os.system(
-                r'python "C:\Users\CBE-User 05\Protocol\protocol_backend\automatic_db_update.py"')
+                r'python "C:\Users\Uchek\Protocol\protocol_backend\automatic_db_update.py"')
 
         elif 'start up' in command:
             self.give_start_up_instructions()
@@ -323,7 +323,7 @@ class SoftwareInteligenzaArtificiale(object):
             os.system(r'start https://www.sainsburys.co.uk/gol-ui/SearchResults/')
             os.system(
                 r'start https://groceries.morrisons.com/webshop/startWebshop.do')
-            os.system(r'start code "C:\Users\CBE-User 05\Protocol\sofia-diet2"')
+            os.system(r'start code "C:\Users\Uchek\Protocol\sofia-diet2"')
 
         elif 'heroku' in command:
             os.system("start https://dashboard.heroku.com")
@@ -356,7 +356,7 @@ class SoftwareInteligenzaArtificiale(object):
             print(command)
             self.gym_routine()
             os.system(
-                r'start excel "C:/Users/CBE-User 05/OneDrive/Documents/training.csv"')
+                r'start excel "C:/Users/Uchek/OneDrive/Documents/training.csv"')
 
         elif 'good morning' in command:
             try:
@@ -371,7 +371,7 @@ class SoftwareInteligenzaArtificiale(object):
             os.system('start excel.exe')
 
         elif 'open write folder' in command:
-            os.system(r'start code "C:/Users/CBE-User 05/Protocol/write"')
+            os.system(r'start code "C:/Users/Uchek/Protocol/write"')
 
         elif 'onenote' in command:
             os.system('start onenote')
@@ -382,29 +382,29 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'take notes' in command:
             os.system(
-                r'start code "C:\Users\CBE-User 05\Protocol\Config_settings"')
+                r'start code "C:\Users\Uchek\Protocol\Config_settings"')
 
         elif 'document' in command:
-            os.chdir("C://Users//CBE-User 05//OneDrive//Documents")
+            os.chdir("C://Users//Uchek//OneDrive//Documents")
             os.system("start .")
             os.chdir(os.getcwd())
 
         elif 'protocol' in command:
-            os.chdir(r"C:\Users\CBE-User 05\Protocol")
+            os.chdir(r"C:\Users\Uchek\Protocol")
             os.system("start .")
             os.chdir(os.getcwd())
 
         elif 'downloads' in command:
-            os.chdir(r"C:\Users\CBE-User 05\Downloads")
+            os.chdir(r"C:\Users\Uchek\Downloads")
             os.system("start .")
             os.chdir(os.getcwd())
 
         elif 'launch sofia' in command:
-            os.system(r'start code "C:\Users\CBE-User 05\Protocol\sofia_silent"')
+            os.system(r'start code "C:\Users\Uchek\Protocol\sofia_silent"')
 
         elif 'clean javascript' in command:
             os.system(
-                r'start code "C:\Users\CBE-User 05\Protocol\learn_javascript\clean_code_javascript.md"')
+                r'start code "C:\Users\Uchek\Protocol\learn_javascript\clean_code_javascript.md"')
 
         elif 'one drive' in command:
             os.system(
@@ -412,22 +412,22 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'web notes' in command:
             os.system(
-                r"C:/Users/CBE-User 05/OneDrive/Documents/Web_development_notes.docx")
+                r"C:/Users/Uchek/OneDrive/Documents/Web_development_notes.docx")
 
         elif 'what is the time' in command:
             self.tell_the_time()
 
         elif 'algorithms' in command:
             os.system(
-                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/DATA_STRUCTURES_AND_BIG_OH.docx"')
+                'start winword.exe "C:/Users/Uchek/OneDrive/Documents/DATA_STRUCTURES_AND_BIG_OH.docx"')
 
         elif 'python algos' in command:
             os.system(
-                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/Data_Structures_and_Algorithms_in_Python.pdf"')
+                'start winword.exe "C:/Users/Uchek/OneDrive/Documents/Data_Structures_and_Algorithms_in_Python.pdf"')
 
         elif 'clean code' in command:
             os.system(
-                'start winword.exe "C:/Users/CBE-User 05/OneDrive/Documents/Clean_Code.docx"')
+                'start winword.exe "C:/Users/Uchek/OneDrive/Documents/Clean_Code.docx"')
 
         elif 'current working directory' in command:
             os.system(f'start "{os.getcwd()}"')
@@ -476,7 +476,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'reaction textbook' in command:
             os.system(
-                r'start msedge "C:\Users\CBE-User 05\OneDrive\Documents\fogler.pdf"')
+                r'start msedge "C:\Users\Uchek\OneDrive\Documents\fogler.pdf"')
 
         elif 'spotify' in command:
             command = command.replace('spotify', '')
@@ -485,7 +485,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "phd work" in command:
             os.system(
-                r'start winword.exe "C:\Users\CBE-User 05\OneDrive\Documents\Back log of tasks to complete.docx"')
+                r'start winword.exe "C:\Users\Uchek\OneDrive\Documents\Back log of tasks to complete.docx"')
             os.system(
                 "start https://github.com/kesler20/SOP/blob/master/productivity/PhD_work.md")
 
@@ -502,13 +502,13 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'main back end' in command:
             os.system(
-                r'start code "C:\Users\CBE-User 05\Protocol\protocol_backend"')
+                r'start code "C:\Users\Uchek\Protocol\protocol_backend"')
 
         elif 'draw uml' in command:
-            os.system(r'start code "C:\Users\CBE-User 05\Protocol\draw-uml"')
+            os.system(r'start code "C:\Users\Uchek\Protocol\draw-uml"')
 
         elif 'jaguar' in command:
-            os.system(r'start code "C:\Users\CBE-User 05\Protocol\jaguar"')
+            os.system(r'start code "C:\Users\Uchek\Protocol\jaguar"')
 
         elif 'aws accounts' in command:
             os.system("start https://eu-west-2.console.aws.amazon.com ")
@@ -517,7 +517,7 @@ class SoftwareInteligenzaArtificiale(object):
             os.system("start https://drawsql.app/diagrams ")
 
         elif 'recycle bin' in command:
-            os.chdir(r"C:\Users\CBE-User 05\Recycle Bin")
+            os.chdir(r"C:\Users\Uchek\Recycle Bin")
             os.system("start .")
             os.chdir(os.getcwd())
 

@@ -11,7 +11,7 @@ class Gui(object):
         self.root.title = title
         self.root.geometry(f'{root_height}x{root_width}')
         self.crossed = self.create_image(
-            30, 30, r"C:\Users\CBE-User 05\Protocol\Sofia\Interactive_gui\assets\crossed.jpg")
+            30, 30, r"C:\Users\Uchek\Protocol\Sofia\Interactive_gui\assets\crossed.jpg")
         self.n_routines = 3
         self.selected_routines = [False for _ in range(self.n_routines)]
 

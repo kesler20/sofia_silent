@@ -9,7 +9,7 @@ import sys
 
 import logging
 logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
+    filename=r"C:\Users\Uchek\Protocol\Sofia\logs_src\main_logs.log",
     level=logging.DEBUG,
     format='%(asctime)s:%(levelname)s:%(message)s)'
 )
@@ -32,9 +32,9 @@ except ModuleNotFoundError:
     from logs_gym.gym_logging import logger
 
 EXERCISE_PATH = os.path.join(os.path.abspath(
-    '\\'), 'Users', 'CBE-User 05', 'OneDrive', 'Documents', 'exercises.csv')
+    '\\'), 'Users', 'Uchek', 'OneDrive', 'Documents', 'exercises.csv')
 TRAINING_PATH = os.path.join(os.path.abspath(
-    '\\'), 'Users', 'CBE-User 05', 'OneDrive','Documents', 'training.csv')
+    '\\'), 'Users', 'Uchek', 'OneDrive','Documents', 'training.csv')
 today = datetime.date.today().weekday()
 
 

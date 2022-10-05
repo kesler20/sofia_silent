@@ -5,7 +5,7 @@ import element
 import locator
 
 
-os.chdir(r"C:\Users\CBE-User 05\Protocol\Sofia")
+os.chdir(r"C:\Users\Uchek\Protocol\Sofia")
 
 if __package__:
     from Web_driver.logs_webdriver.webdriver_logging import logger, logging
