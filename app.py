@@ -24,5 +24,4 @@ def home():
     return render_template('silent_sofia.html')
 
 if __name__ == '__main__':
-    os.system("start http://localhost:5000")
     app.run(port=5000, debug=True)
