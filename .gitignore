@@ -2,7 +2,6 @@
 /app/
 /aws/
 /csv/
-/journal-env/
 __pycache__
 fastapi.pem
 putty.ppk
@@ -13,3 +12,7 @@ tempfiles
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+# Python configuration files
+config.py
+# credentials folder 
+/credentials/

@@ -1,3 +1,5 @@
+from selenium import webdriver as wb
+import unittest
 import os
 import sys
 import page
@@ -13,25 +15,23 @@ else:
     sys.path.append(os.path.join(os.getcwd(), 'Web_driver'))
     from logs_webdriver.webdriver_logging import logger, logging
 
-logger.info(
+print(
     '__file__={0:<35} | __name__={1:<25} | __package__={2:<25}'.format(
         __file__, __name__, str(__package__)
     )
 )
 
-import unittest
-from selenium import webdriver as wb
 
 class TestSearch(unittest.TestCase):
 
     def setUp(self):
-        web_driver_path = os.path.join(os.getcwd(),'Web_driver','msedgedriver.exe')
+        web_driver_path = os.path.join(os.getcwd(), 'Web_driver', 'msedgedriver.exe')
         self.driver = wb.Edge(web_driver_path)
         # get python documentation
         self.driver.get('http://www.python.org')
 
     def test_logging(self):
-        logger.info('The test log has ran succesfully')
+        print('The test log has ran succesfully')
         self.assertLogs(logger, logging.DEBUG)
         # self.assertFalse(1,1) red
 

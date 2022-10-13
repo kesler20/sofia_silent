@@ -2,7 +2,6 @@ import base64
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
-import sys
 # for dealing with attachement MIME types
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -13,33 +12,8 @@ from mimetypes import guess_type as guess_mime_type
 
 # Request all access (permission to read/send/receive emails, manage the inbox, and more)
 
-import logging
-logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
-    level=logging.DEBUG,
-    format='%(asctime)s:%(levelname)s:%(message)s)'
-)
-
-try:
-    from Google_Api.google_api import GoogleApi
-    from Google_Api.config_files.config_file import *
-    from Google_Api.logs_google_api.google_api_logging import logger
-
-except ModuleNotFoundError:
-    def check_directory(path: str):
-        if path.startswith('.') or path.startswith('__') or path.endswith('.exe'):
-            return False
-        else:
-            return True
-    _modules = list(filter(check_directory, os.listdir(os.getcwd())))
-    for module in _modules:
-        sys.path.append(os.path.join(os.getcwd(), module))
-    logging.info('----------- Moduels in System Path ------------')
-    logging.info(sys.path)
-
-    from google_api import GoogleApi
-    from config_files.config_file import *
-    from logs_google_api.google_api_logging import logger
+from Google_Api.google_api import GoogleApi
+from Google_Api.config_files.config_file import *
 
 # FOR DOCUMENTATION WHICH WORKS https://www.thepythoncode.com/article/use-gmail-api-in-python
 
@@ -104,7 +78,7 @@ class GmailApi(GoogleApi):
 
         message = service.users().messages().send(
             userId='me', body={'raw': raw_string}).execute()
-        logger.info(message)
+        print(message)
 
     def search_messages(self, query):
         service = self.Create_Service()

@@ -1,14 +1,14 @@
 # include weight and use poandas and matplotlib to plot calories and protein and weight
 import myfitnesspal
 from datetime import date
-
+from config import *
 
 class CalorieCounter(object):
 
     def __init__(self):
 
         self.client = myfitnesspal.Client(
-            'dollyoung20', password='kesler isoko20')
+            USERNAME, password=PASSWORD)
 
         todays_date = date.today()
         self.today = todays_date
@@ -44,11 +44,11 @@ class CalorieCounter(object):
         month = int(yeserdays_date.strftime('%m')[1])
         if month == 0:
             month = int(self.today.strftime('%m'))
-            logger.info(month)
+            print(month)
 
         self.day = self.client.get_date(2021, month, day)
-        logger.info(self)
+        print(self)
 
 
 calories = CalorieCounter()
-logger.info(calories)
+print(calories)

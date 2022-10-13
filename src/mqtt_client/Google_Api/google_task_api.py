@@ -1,35 +1,8 @@
 import pandas as pd
 import datetime
-import os 
-import sys
+from Google_Api.config_files.config_file import *
+from Google_Api.google_api import GoogleApi
 
-import logging 
-logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
-    level=logging.DEBUG,
-    format='%(asctime)s:%(levelname)s:%(message)s)'
-)
-
-try:
-    from Google_Api.config_files.config_file import *
-    from Google_Api.google_api import GoogleApi
-    from Google_Api.logs_google_api.google_api_logging import logger
-    
-except ModuleNotFoundError:
-    def check_directory(path: str):
-        if path.startswith('.') or path.startswith('__') or path.endswith('.exe'):
-            return False
-        else:
-            return True
-    _modules = list(filter(check_directory,os.listdir(os.getcwd())))
-    for module in _modules:
-        sys.path.append(os.path.join(os.getcwd(),module))
-    logging.info('----------- Moduels in System Path ------------')
-    logging.info(sys.path)
-
-    from google_api import GoogleApi
-    from config_files.config_file import *
-    from logs_google_api.google_api_logging import logger
 
 class TasksApi(GoogleApi):
 
@@ -85,7 +58,7 @@ class TasksApi(GoogleApi):
         new_task_response = service.tasklists().insert(
             body=self.construct_request_body(title, notes=notes, due=dt),
         ).execute()
-        logger.info(new_task_response)
+        print(new_task_response)
 
     def insert_task_to_tasklist(self, title, index_of_main_tasklists, notes, dt):
         service, response = self.construct_service_and_response_for_tasklists()
@@ -95,12 +68,12 @@ class TasksApi(GoogleApi):
             body=self.construct_request_body(title, notes=notes, due=dt),
             tasklist=TasklistId
         ).execute()
-        logger.info(new_task_response)
+        print(new_task_response)
 
     def update_main_task_title(self, index, title):
         service, response = self.construct_service_and_response_for_tasklists()
         Tasklist = response.get('items')[index]
-        logger.info(Tasklist)
+        print(Tasklist)
         Tasklist['title'] = title
         service.tasklists().update(
             tasklist=Tasklist['id'], body=Tasklist).execute()
@@ -122,7 +95,7 @@ class TasksApi(GoogleApi):
         ).execute()
         lstItems = response.get('items')
         nextPageToken = response.get('nextPageToken')
-        logger.info(pd.DataFrame(lstItems))
+        print(pd.DataFrame(lstItems))
 
     """
         Delete Method
@@ -138,7 +111,7 @@ class TasksApi(GoogleApi):
         new_task_response = service.tasklists().delete(
             tasklist=TasklistId
         ).execute()
-        logger.info(new_task_response)
+        print(new_task_response)
 
     def delete_tasks(self, index_of_main_tasklists, index_of_main_tasks):
         service0, response0 = self.construct_service_and_response_for_tasklists()
@@ -152,7 +125,7 @@ class TasksApi(GoogleApi):
             tasklist=TasklistId0,
             task=TasklistId
         ).execute()
-        logger.info(new_task_response)
+        print(new_task_response)
 
 
 API_NAME = 'tasks'

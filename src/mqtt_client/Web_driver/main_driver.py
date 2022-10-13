@@ -1,18 +1,15 @@
-import os 
+import os
 import selenium
 from selenium import webdriver as wb
 import time
-import sys
-sys.path.append(os.path.join(os.getcwd(),'Web_driver'))
-from logs_webdriver.webdriver_logging import logger
 
 class WebController(object):
 
     def __init__(self):
-        self.web_driver_path = os.path.join(os.getcwd(),'Web_driver','msedgedriver.exe')
+        self.web_driver_path = os.path.join(os.getcwd(), 'Web_driver', 'msedgedriver.exe')
         self.driver = wb.Edge(self.web_driver_path)
 
-    def open_email_and_blackboard(self,e_mail, email_read_time,session_lenght):
+    def open_email_and_blackboard(self, e_mail, email_read_time, session_lenght):
 
         # open email and log in
         if e_mail:
@@ -23,7 +20,7 @@ class WebController(object):
             try:
                 next_buttom.click()
             except selenium.common.exceptions.ElementClickInterceptedException as err:
-                logger.info(err)
+                print(err)
                 time.sleep(20)
             time.sleep(3)
             username_search_box = self.driver.find_element_by_id('username')
@@ -50,23 +47,16 @@ class WebController(object):
     def initialize_workflow(self):
         os.system('start "C:/Users/CBE-User 05/OneDrive/Documents/Gymnasium.xlsx"')
         os.system('start https://pomofocus.io')
-        os.system('start https://github.com/kesler20/Sofia/blob/master/Context/speaker.py') #sofia commands 
+        os.system('start https://github.com/kesler20/Sofia/blob/master/Context/speaker.py')  # sofia commands
 
     def get_website(self, url, check_time=None):
         if check_time is None:
             check_time = 150
-        
+
         driver = self.get_driver(url)
-        username_search_box = driver.find_element_by_id('username')
-        username_search_box.send_keys('fca19kui')
-        password_searchbox = driver.find_element_by_id('password')
-        password_searchbox.send_keys('keslerisoko20')
-        login_button = driver.find_element_by_xpath('//*[@id="fm1"]/input[4]')
-        login_button.click()
         time.sleep(6)
         push_button = driver.find_element_by_xpath(
             '//*[@id="auth_methods"]/fieldset/div[1]/button'
         )
         push_button.click()
         time.sleep(check_time)
-

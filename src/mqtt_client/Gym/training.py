@@ -5,36 +5,12 @@ import time
 import os
 import datetime
 import pandas
-import sys
 
-import logging
-logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
-    level=logging.DEBUG,
-    format='%(asctime)s:%(levelname)s:%(message)s)'
-)
-
-try:
-    from Gym.logs_gym.gym_logging import logger
-
-except ModuleNotFoundError:
-    def check_directory(path: str):
-        if path.startswith('.') or path.startswith('__') or path.endswith('.exe'):
-            return False
-        else:
-            return True
-    _modules = list(filter(check_directory, os.listdir(os.getcwd())))
-    for module in _modules:
-        sys.path.append(os.path.join(os.getcwd(), module))
-    logging.info('----------- Modules in System Path ------------')
-    logging.info(sys.path)
-
-    from logs_gym.gym_logging import logger
 
 EXERCISE_PATH = os.path.join(os.path.abspath(
     '\\'), 'Users', 'CBE-User 05', 'OneDrive', 'Documents', 'exercises.csv')
 TRAINING_PATH = os.path.join(os.path.abspath(
-    '\\'), 'Users', 'CBE-User 05', 'OneDrive','Documents', 'training.csv')
+    '\\'), 'Users', 'CBE-User 05', 'OneDrive', 'Documents', 'training.csv')
 today = datetime.date.today().weekday()
 
 
@@ -44,7 +20,7 @@ def construct_exercise(name):
     except pandas.errors.EmptyDataError:
         df = pd.DataFrame([0, 0, 0])
     df[name] = pd.DataFrame([0, 0, 0])
-    logger.info(df)
+    print(df)
     df.to_csv(EXERCISE_PATH, index=False)
 
 
@@ -62,10 +38,10 @@ class Exercise(object):
                 self.sets = df[self.name][1]
                 self.reps = df[self.name][2]
         except KeyError:
-            logger.info('constructing exercise....')
+            print('constructing exercise....')
             construct_exercise(name)
         except pandas.errors.EmptyDataError:
-            logger.info('constructing exercise....')
+            print('constructing exercise....')
             construct_exercise(name)
 
     def __repr__(self):
@@ -168,7 +144,7 @@ def write_generated_workout_to_csv(workout: Workout, save=True):
     workout_summary[str(time.strftime("%d/%m/%Y"))
                     ] = ['weight (Kg)', 'sets', 'reps']
     for exercise in workout.exercises:
-        logger.info(exercise)
+        print(exercise)
         name = exercise.name
         weight = exercise.weight
         sets = exercise.sets
@@ -177,7 +153,7 @@ def write_generated_workout_to_csv(workout: Workout, save=True):
 
     workout_summary.drop([0], axis=1, inplace=True)
 
-    logger.info(workout_summary)
+    print(workout_summary)
     if save:
         workout_summary.to_csv(TRAINING_PATH, index=False)
         print('------workout saved succesfully------------')
@@ -189,7 +165,7 @@ def update_exercises_results():
     try:
         training_results: DataFrame = pd.read_csv(TRAINING_PATH)
     except FileNotFoundError as err:
-        logger.info(err)
+        print(err)
         return None
     historical_training_database: DataFrame = pd.read_csv(EXERCISE_PATH)
     columns_from_historical = list(historical_training_database.columns)
@@ -198,14 +174,14 @@ def update_exercises_results():
             column = str(column)
             name = str(name)
             if name.startswith(column):
-                logger.info(name)
-                logger.info(column)
+                print(name)
+                print(column)
                 try:
                     if sum(historical_training_database[column]) > sum(training_results[name]):
                         pass
                     else:
                         historical_training_database[column] = training_results[name]
-                        logger.info(historical_training_database[column])
+                        print(historical_training_database[column])
                 except TypeError:
                     pass
     print('-------------------results updated succesfully--------------')

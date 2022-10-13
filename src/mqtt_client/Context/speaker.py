@@ -5,47 +5,11 @@ import sys
 import os
 import datetime
 import speech_recognition
-import logging
 import pyttsx3
-
-logging.basicConfig(
-    filename=r"C:\Users\CBE-User 05\Protocol\Sofia\logs_src\main_logs.log",
-    level=logging.DEBUG,
-    format='%(asctime)s:%(levelname)s:%(message)s)'
-)
-# TODO: Remove the GUI functionality by changing the initialis_woerkflow function and the below objects
-# in order to incluide the ability to select files to launch programmes from the UI oe by voice command
-# if the client is not authorised refresh the token and download a new json file or put scopes on one of the keyvalue pairs
-# and to renew credentials go to https://console.cloud.google.com/apis/credentials?authuser=1&project=learned-vault-319419
-
-try:
-    from Database.flask_database import FORMAT_SESSION_ID, File, day, month
-    from logs_src.main_logging import logger
-    from Web_driver.main_driver import WebController
-    from Google_Api.gmail_api import gmail_api
-    from Gym.training import update_exercises_results, generate_workout, write_generated_workout_to_csv
-    from Google_Api.google_task_api import task_api
-    from Web_driver.main_driver import WebController
-
-except ModuleNotFoundError:
-    def check_directory(path: str):
-        if path.startswith('.') or path.startswith('__') or path.endswith('.exe'):
-            return False
-        else:
-            return True
-    _modules = list(filter(check_directory, os.listdir(os.getcwd())))
-    for module in _modules:
-        sys.path.append(os.path.join(os.getcwd(), module))
-    logging.info('----------- Moduels in System Path ------------')
-    logging.info(sys.path)
-
-    from flask_database import FORMAT_SESSION_ID, File, day, month
-    from main_logging import logger
-    from main_driver import WebController
-    from gmail_api import gmail_api
-    from training import update_exercises_results, generate_workout, write_generated_workout_to_csv
-    from google_task_api import task_api
-    from main_driver import WebController
+from Google_Api.gmail_api import gmail_api
+from Gym.training import update_exercises_results, generate_workout, write_generated_workout_to_csv
+from Google_Api.google_task_api import task_api
+from Web_driver.main_driver import WebController
 
 GOOGLE_TASKS_TASKLISTS = {
     'My Tasks': 0,
