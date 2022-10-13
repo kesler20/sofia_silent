@@ -6,6 +6,7 @@ import os
 import datetime
 import speech_recognition
 import pyttsx3
+from Context.config import GYM_EMAIL, GYM_PIN
 from Google_Api.gmail_api import gmail_api
 from Gym.training import update_exercises_results, generate_workout, write_generated_workout_to_csv
 from Google_Api.google_task_api import task_api
@@ -21,6 +22,11 @@ GOOGLE_TASKS_TASKLISTS = {
     'Night Routine': 3
 }
 
+month = datetime.datetime.now().strftime("%m")
+day= datetime.datetime.now().strftime("%d")
+
+print(month)
+print(day)
 
 class SoftwareInteligenzaArtificiale(object):
 
@@ -45,10 +51,10 @@ class SoftwareInteligenzaArtificiale(object):
         cookies_btn = driver.find_element_by_id('onetrust-accept-btn-handler')
         cookies_btn.click()
         email_field = driver.find_element_by_id('login-email')
-        email_field.send_keys('kuisoko1@sheffield.ac.uk')
+        email_field.send_keys(GYM_EMAIL)
 
         pin_field = driver.find_element_by_id('pin')
-        pin_field.send_keys('17130800')
+        pin_field.send_keys(GYM_PIN)
 
         login_button = driver.find_element_by_xpath(
             '//*[@id="login-modal"]/section/form/div[2]/div[5]/div/button')
@@ -85,7 +91,7 @@ class SoftwareInteligenzaArtificiale(object):
         command = "what is the weather like today"
         os.system(
             f"start https://www.google.co.uk/search?q=={command.replace(' ','+')}")
-
+        
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
         today = datetime.date.today().weekday()
 
@@ -237,9 +243,9 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "open journal" in command:
             os.system(
-                r'start code  {}\Protocol\github\journal_frontend'.format(osi.gcu()))
+                r'start code {}\Protocol\github\journal_frontend'.format(osi.gcu()))
             os.system(
-                r'start code  {}\Protocol\github\journal_backend'.format(osi.gcu()))
+                r'start code {}\Protocol\github\journal_backend'.format(osi.gcu()))
 
         elif "genetic engineering" in command:
             os.system("start https://github.com/Sheffield-iGEM ")
@@ -255,11 +261,11 @@ class SoftwareInteligenzaArtificiale(object):
             )
 
         elif 'save to database' in command:
-            os.system(r'cd  {}\Protocol\protocol_backend'.format(osi.gcu()))
+            os.system(r'cd {}\Protocol\protocol_backend'.format(osi.gcu()))
             os.system(
-                r'python  {}\Protocol\protocol_backend\sql_db_interface\database_interface.py'.format(osi.gcu()))
+                r'python {}\Protocol\protocol_backend\sql_db_interface\database_interface.py'.format(osi.gcu()))
             os.system(
-                r'python  {}\Protocol\protocol_backend\automatic_db_update.py'.format(osi.gcu()))
+                r'python {}\Protocol\protocol_backend\automatic_db_update.py'.format(osi.gcu()))
 
         elif 'start up' in command:
             self.give_start_up_instructions()
@@ -349,7 +355,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'take notes' in command:
             os.system(
-                r'start code  {}\Protocol\Config_settings'.format(osi.gcu()))
+                r'start code {}\Protocol\Config_settings'.format(osi.gcu()))
 
         elif 'document' in command:
             os.chdir("C://Users//CBE-User 05//OneDrive//Documents")
@@ -357,21 +363,21 @@ class SoftwareInteligenzaArtificiale(object):
             os.chdir(os.getcwd())
 
         elif 'protocol' in command:
-            os.chdir(r"{}\Protocol")
+            os.chdir(r"{}\Protocol".format(osi.gcu()))
             os.system("start .")
             os.chdir(os.getcwd())
 
         elif 'downloads' in command:
-            os.chdir(r"{}\Downloads")
+            os.chdir(r"{}\Downloads".format(osi.gcu()))
             os.system("start .")
             os.chdir(os.getcwd())
 
         elif 'launch sofia' in command:
-            os.system(r'start code  {}\Protocol\sofia_silent'.format(osi.gcu()))
+            os.system(r'start code {}\Protocol\sofia_silent'.format(osi.gcu()))
 
         elif 'clean javascript' in command:
             os.system(
-                r'start code  {}\Protocol\learn_javascript\clean_code_javascript.md'.format(osi.gcu()))
+                r'start code {}\Protocol\learn_javascript\clean_code_javascript.md'.format(osi.gcu()))
 
         elif 'one drive' in command:
             os.system(
@@ -431,7 +437,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'reaction textbook' in command:
             os.system(
-                r'start msedge  {}\OneDrive\Documents\fogler.pdf'.format(osi.gcu()))
+                r'start msedge {}\OneDrive\Documents\fogler.pdf'.format(osi.gcu()))
 
         elif 'spotify' in command:
             command = command.replace('spotify', '')
@@ -440,7 +446,7 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "phd work" in command:
             os.system(
-                r'start winword.exe  {}\OneDrive\Documents\Back log of tasks to complete.docx'.format(osi.gcu()))
+                r'start winword.exe {}\OneDrive\Documents\Back log of tasks to complete.docx'.format(osi.gcu()))
             os.system(
                 "start https://github.com/kesler20/SOP/blob/master/productivity/PhD_work.md")
 
@@ -457,13 +463,13 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif 'main back end' in command:
             os.system(
-                r'start code  {}\Protocol\protocol_backend'.format(osi.gcu()))
+                r'start code {}\Protocol\protocol_backend'.format(osi.gcu()))
 
         elif 'draw uml' in command:
-            os.system(r'start code  {}\Protocol\draw-uml'.format(osi.gcu()))
+            os.system(r'start code {}\Protocol\draw-uml'.format(osi.gcu()))
 
         elif 'jaguar' in command:
-            os.system(r'start code  {}\Protocol\jaguar'.format(osi.gcu()))
+            os.system(r'start code {}\Protocol\jaguar'.format(osi.gcu()))
 
         elif 'aws accounts' in command:
             os.system("start https://eu-west-2.console.aws.amazon.com ")
