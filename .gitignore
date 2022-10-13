@@ -14,5 +14,12 @@ tempfiles
 !.elasticbeanstalk/*.global.yml
 # Python configuration files
 config.py
-# credentials folder 
-/credentials/
+# ignore aws credentials files
+a2gac7ap3hk6n-ats.iot.eu-west-2.amazonaws.com
+AmazonRootCA1.pem
+3db5150d28fe72d77930e3cc3a428e90e9ff292f51496be5edf99e8e936b0773-private.pem.key
+3db5150d28fe72d77930e3cc3a428e90e9ff292f51496be5edf99e8e936b0773-certificate.pem.crt
+# google api
+client_secret_1028475286088-bj03n932hpj20nhpmo2qp9ljdndhjueb.apps.googleusercontent.com.json
+token_gmail_v1.pickle
+token_tasks_v1.pickle
