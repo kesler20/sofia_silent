@@ -32,7 +32,7 @@ class GoogleApi(object):
 
         cred = None
 
-        pickle_file = os.path.join(os.path.dirname(__file__), 'config_files', f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle')
+        pickle_file = os.path.join(os.path.dirname(__file__), 'credentials', f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle')
         print(pickle_file)
 
         if os.path.exists(pickle_file):

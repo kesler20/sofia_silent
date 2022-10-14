@@ -49,7 +49,7 @@ class WebController(object):
         time.sleep(60*session_lenght)
 
     def initialize_workflow(self):
-        os.system(r'start {osi.gcu()}/OneDrive/Documents/Gymnasium.xlsx')
+        os.system(r'start {}/OneDrive/Documents/Gymnasium.xlsx'.format(osi.gcu()))
         os.system('start https://pomofocus.io')
         os.system('start https://github.com/kesler20/Sofia/blob/master/Context/speaker.py')  # sofia commands
 

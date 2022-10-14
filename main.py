@@ -39,5 +39,5 @@ while True:
         else:
             device_write.publish_data(WRITE_TOPIC,response_msg)
         time.sleep(2)
-    except AWSIoTPythonSDK.exception.AWSIoTExceptions.subscribeTimeoutException:
+    except:
         pass

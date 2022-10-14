@@ -22,8 +22,8 @@ GOOGLE_TASKS_TASKLISTS = {
     'Night Routine': 3
 }
 
-month = datetime.datetime.now().strftime("%m")
-day= datetime.datetime.now().strftime("%d")
+month = int(datetime.datetime.now().strftime("%m"))
+day= int(datetime.datetime.now().strftime("%d"))
 
 
 class SoftwareInteligenzaArtificiale(object):
@@ -35,8 +35,10 @@ class SoftwareInteligenzaArtificiale(object):
     def move_resource(self, source_path: str, destination_path: str):
         os.rename(source_path, destination_path)
 
-    def listen_to_command(self, listener: speech_recognition.Recognizer):
+    def listen_to_command(self, listener: speech_recognition.Recognizer, default_command: str):
+        command = default_command
         with speech_recognition.Microphone() as source:
+            print(f'command', command)
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
             command = command.lower()
@@ -93,45 +95,36 @@ class SoftwareInteligenzaArtificiale(object):
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
         today = datetime.date.today().weekday()
 
-        gym = ""
-        stretching_and_abs = ""
-        if today in [0, 2, 4, 5]:
-            gym = "gym (30 mins)"
-        else:
-            stretching_and_abs = "stretching and abs"
-
         morning_routine = [
-            "run sofia weekly schema",
-            "run sofia functions",
-            "put room in order",
-            "put deodorant",
-            "wash face",
-            stretching_and_abs,
-            "use 10 fast fingers (30 mins)"
-            "complete 1 hackerank problem (1 hour)",
-            "weight and update gymnasium",
-            "eat (30 mins)",
-            "drink water (1 liter a day)",
-            "fill water bottles",
-            "brush teeth",
-            "put cream on",
-            gym,
-            "save to database"
+            "Run good morning sofia",
+            "run exercise",
+            "Piss/shit",
+            "Wash hands/face (exfoliate every wednesday and saturday)",
+            "Put deodorant",
+            "Put room in order",
+            "Weight yourself (go to the gym to weight yourself every tuesday)",
+            "Update gymnasium",
+            "Run database update",
+            "Abs (10 minutes)",
+            "Stretching (15 minutes)",
+            "eat (30 minutes)",
+            "Brush teeth (2 minutes)",
+            "Put cream on",
+            "fill water bottle",
+            "zeta mac (10 minutes)",
+            "Gym 1.5 hr (bring a tesco bag to put gym equipment and water)",
+            "Complete one hackerank problem"
         ]
 
-        # filter all the conditional functions
-        morning_routine = list(
-            filter(lambda task: task != "", morning_routine))
-
         night_routine = [
-            'brush teeth',
-            'read',
             'put power bank on charge',
             'put headphones on charge',
             'put earpods on charge',
             'put phone on charge',
-            'track calories by filling the diet-track file',
+            'track calories by filling sofia-diet',
             'clean watch later playlist'
+            'brush teeth',
+            'read',
         ]
 
         daily_tasks = []
@@ -146,6 +139,7 @@ class SoftwareInteligenzaArtificiale(object):
         for task in daily_tasks:
             task_api.insert_task_to_tasklist(
                 task, 1, f'created at : {datetime.datetime.now()}', dt)
+        
 
     def create_task(self, task):
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
@@ -334,6 +328,7 @@ class SoftwareInteligenzaArtificiale(object):
                 self.add_tasks()
             except:
                 self.add_tasks()
+            self.webcontroller.initialize_workflow()
 
         elif 'calendar' in command:
             os.system(r'start https://calendar.google.com/calendar/u/0/r?tab=kc')
@@ -491,3 +486,17 @@ class SoftwareInteligenzaArtificiale(object):
         except speech_recognition.UnknownValueError:
             engine.say(" sorry I didn't get that")
             engine.runAndWait()
+    
+    def run_loop(self, listener: speech_recognition.Recognizer):
+        stop_command = False
+        while not stop_command:
+            try:
+                command = self.listen_to_command(
+                    listener, 'Listening')
+                if 'stop' in command:
+                    stop_command = True
+                else:
+                    print(command)
+                    self.run_context(command)
+            except speech_recognition.UnknownValueError:
+                pass
