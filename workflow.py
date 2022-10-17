@@ -8,35 +8,41 @@ from interfaces.os_interface import OperatingSystemInterface
 osi = OperatingSystemInterface()
 user_directory = osi.gcu()
 
+
 class AmplifyApplication(object):
 
     def __init__(self) -> None:
-        self.credential_location = os.path.join(osi.gcu(),"Onedrive","Documents", "new_user_credentials.csv") 
-        self.categories = ["notifications", 'api', 'auth', 'custom', 'storage', 'analytics', 'function', 'geo', 'hosting', 'interactions', 'predictions', 'xr']
-    
-    def modify_amplify_application(self,categoryID):
-        category = self.categories[int(categoryID)]
+        self.credential_location = os.path.join(
+            osi.gcu(), "Onedrive", "Documents", "new_user_credentials.csv")
+        self.categories = ["notifications", 'api', 'auth', 'custom', 'storage',
+                           'analytics', 'function', 'geo', 'hosting', 'interactions', 'predictions', 'xr']
+
+    def modify_amplify_application(self, categoryIDs):
         os.system(
             r"start excel {}".format(self.credential_location))
-        os.system(f"amplify add {category}")
-        os.system("amplify status")
-        os.system("amplify push")
-        os.system("amplify publish")
-        os.system("amplify pull")
-    
+        for categoryID in categoryIDs:
+            category = self.categories[int(categoryID)]
+            os.system(f"amplify add {category}")
+            os.system("amplify status")
+            os.system("amplify push")
+            os.system("amplify pull")
+
     def import_amplify_application(self):
+        '''read the aws config file to extract the useful information'''
         pass
 
-    def initialize_amplify_application(self, categoryID: int):
-        category = self.categories[int(categoryID)]
+    def initialize_amplify_application(self, *categoryIDs):
         os.system(
             r"start excel {}".format(self.credential_location))
         os.system("amplify init")
-        os.system(f"amplify add {category}")
-        os.system("amplify status")
-        os.system("amplify push")
+        for categoryID in categoryIDs:
+            category = self.categories[int(categoryID)]
+            os.system(f"amplify add {category}")
+            os.system("amplify status")
+            os.system("amplify push")
+            os.system("amplify pull")
+
         os.system("amplify publish")
-        os.system("amplify pull")
 
     def sync_env_variable_to_aws_exports(self):
         AWS_CONFIG_DATA = []
@@ -78,7 +84,8 @@ class AmplifyApplication(object):
             print("------------------------  ---> ")
             for k in keys:
                 upper_k = k.upper()
-                AWS_CONFIG_DATA.append(f'REACT_APP_{upper_k} = "{content[0][k]}"')
+                AWS_CONFIG_DATA.append(
+                    f'REACT_APP_{upper_k} = "{content[0][k]}"')
             print(f'REACT_APP_{upper_k} = "{content[0][k]}"')
 
         print("------------------------------- getting the current .env file ✅")
@@ -102,7 +109,7 @@ class AmplifyApplication(object):
                 print(line)
                 write_to_env_file.write(f'{line}\n')
             os.remove("aws-exports.json")
-    
+
     def push_to_amplify(target_directory: str):
         '''
         In order to publish to amplify make sure that you have initialised the correct application
@@ -132,17 +139,22 @@ class AmplifyApplication(object):
         print("------------ publishing the application to amplify ✅")
         os.system("amplify publish")
         os.system("------------ workflow completed successfully ✅")
-    
+
+
 class ReactApplication(object):
 
     def __init__(self) -> None:
         pass
 
     def initialise_env_file(self):
-        pass
+        with open(".env", "w") as env, open(os.path.join(osi.gcu(), "Protocol", "jaguar", "config.py", "r")) as configs:
+            content = configs.read()
+            env.write(content)
 
     def add_mqtt_library(self):
+        # go through the journal frontend library and automate all the set up steps
         pass
+
 
 def push_to_heroku(backend_directory: str, commit_message: str):
     '''
@@ -169,27 +181,77 @@ def push_to_heroku(backend_directory: str, commit_message: str):
     os.system("git push heroku master")
 
 
-def push_to_github(target_directory):
+def init_heroku_app():
+    pass
+
+
+def test_and_push_to_github(target_directory, type):
     print(f"------------- cd into --> {target_directory} 🚕")
     os.chdir(target_directory)
-    print("------------ running tests using npm 🧪")
-    os.system("npm test")
+
+    if type == "js":
+        print("------------ running tests using npm 🧪")
+        os.system("npm test")
+
+    if type == "py":
+        print("------------ running tests using pytest 🐍🧪")
+        os.system("python -m pytest")
+
     print("------------ the tests have passed so we can push to github ✅")
     os.system("git pull")
     os.system("git add . ")
     os.system('git commit -m "make it better"')
     os.system("git push ")
-    print("------------ publishing the application to amplify ✅")
+
+
+def push_to_github(target_directory):
+    print("------------ pushing untested code 😞")
+    print(f"------------- cd into --> {target_directory} 🚕")
+    os.chdir(target_directory)
+    os.system("git pull")
+    os.system("git add . ")
+    os.system('git commit -m "make it better"')
+    os.system("git push ")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "publish":
-            push_to_amplify(os.getcwd())
-        if sys.argv[1] == "sync":
-            sync_env_variable_to_aws_exports()
-        if sys.argv[1] == "init amplify":
-            initialize_amplify_application(sys.argv[2])
+    amplify = AmplifyApplication()
+    react = ReactApplication()
+    
+    if sys.argv[1] == "aws":
+        if sys.argv[2] == "import":
+            amplify.import_amplify_application()
+        elif sys.argv[2] == "init":
+            amplify.initialize_amplify_application(*sys.argv[2:])
+        elif sys.argv[2] == "add":
+            amplify.modify_amplify_application(*sys.argv[2:])
+        elif sys.argv[2] == "publish":
+            amplify.push_to_amplify()
+        elif sys.argv[2] == "synch":
+            amplify.sync_env_variable_to_aws_exports()
+        else:
+            print("run 'python workflow.py aws import to import an existing amplify application'")
+
+    elif sys.argv[1] == "react":
+        if sys.argv[2] == "mqtt":
+            react.add_mqtt_library()
+        elif sys.argv[2] == "env":
+            react.initialise_env_file()
+        else:
+            print("run 'python workflow.py mqtt env' to generate a standard env file")
+
+    elif sys.argv[1] == "heroku":
+        push_to_heroku(os.getcwd(), "make it better")
+
+    elif sys.argv[1] == "replace":
+        if len(sys.argv) == 2:
+            osi.replace_file("workflow.py")
+        else:
+            for file in sys.argv[2:]:
+                osi.replace_file(file)
+
+    elif sys.argv[1] == "test":
+        test_and_push_to_github(os.getcwd(),sys.argv[2])
 
     else:
         push_to_github(os.getcwd())

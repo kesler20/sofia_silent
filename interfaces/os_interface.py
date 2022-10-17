@@ -78,9 +78,10 @@ class OperatingSystemInterface(object):
         '''file is __file__ Get current folder just before the name of the file'''
         return os.path.dirname(file)
 
-    def replace_file(self, file, folder_source):
+    def replace_file(self, file, folder_source="jaguar"):
         '''
         The folder that you are currently working on will be used as destination file
+        The source folder will be searched in the protocol folder and is jaguar by default
         '''
         # remove the local version which will be replaced
         try:
