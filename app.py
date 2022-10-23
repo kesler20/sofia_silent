@@ -37,6 +37,8 @@ def render_home_page():
 
 #----------------------------------- COMMAND TO START-----------------------------------------------
 if __name__ == '__main__':
+    os.system(
+        'start http://sofiasilentui-20221007004808-hostingbucket-dev.s3-website.eu-west-2.amazonaws.com/')
     app.run(debug=True, port=5500)
      
     
