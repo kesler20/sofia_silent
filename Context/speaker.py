@@ -235,9 +235,9 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "open journal" in command:
             os.system(
-                r'start code {}\Protocol\github\journal_frontend'.format(osi.gcu()))
+                r'start code {}\Protocol\journal_frontend'.format(osi.gcu()))
             os.system(
-                r'start code {}\Protocol\github\journal_backend'.format(osi.gcu()))
+                r'start code {}\Protocol\journal_backend'.format(osi.gcu()))
 
         elif "genetic engineering" in command:
             os.system("start https://github.com/Sheffield-iGEM ")

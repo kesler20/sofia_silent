@@ -1,3 +1,4 @@
+import threading
 import os
 from Context.speaker import SoftwareInteligenzaArtificiale
 from flask import redirect, url_for, render_template, request, session, send_from_directory, flash
@@ -10,6 +11,9 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Foreign
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from interfaces.os_interface import OperatingSystemInterface
+
+osi = OperatingSystemInterface()
 
 ROOT_DIR = os.path.dirname(os.getcwd())
 app = Flask(
@@ -35,10 +39,16 @@ def render_home_page():
 
     return { "response" :"okay"}
 
+def thread_function():
+    os.system(r'start code {}\protocol\sofia_silent_ui'.format(osi.gcu()))
+    # os.chdir(r'{}\protocol\sofia_silent_ui'.format(osi.gcu()))
+    # os.system('npm start')
+    # os.chdir(os.getcwd())
+
 #----------------------------------- COMMAND TO START-----------------------------------------------
 if __name__ == '__main__':
-    os.system(
-        'start http://sofiasilentui-20221007004808-hostingbucket-dev.s3-website.eu-west-2.amazonaws.com/')
+    t = threading.Thread(target=thread_function)
+    t.start()
     app.run(debug=True, port=5500)
      
     
