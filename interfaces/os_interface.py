@@ -1,5 +1,6 @@
 import os
 import shutil
+import platform
 
 
 class File(object):
@@ -72,31 +73,37 @@ class OperatingSystemInterface(object):
 
     def gcu(self) -> str:
         '''Get the current user i.e. C:/Users/Uchek'''
-        return os.getcwd()[:os.getcwd().find(r"\protocol")]
+        if platform.system() == "Linux":
+            root_path = os.path.join(*os.path.dirname(
+                __file__).split("/")[:5])
+        else:
+            root_path = os.path.join(*os.path.dirname(
+                __file__).split(r"\ ".replace(" ", ""))[:3])
+
+        print(root_path)
+        return root_path
 
     def get_current_project(self, file) -> str:
         '''file is __file__ Get current folder just before the name of the file'''
         return os.path.dirname(file)
 
-    def replace_file(self, file, folder_source="jaguar"):
+    def copy_file_from_folder(self, file, source_folder="jaguar"):
         '''
         The folder that you are currently working on will be used as destination file
         The source folder will be searched in the protocol folder and is jaguar by default
+        the file which will be replace in the local directory has path ``os.path.join(self.directory,file)``
         '''
-        # remove the local version which will be replaced
-        try:
-            os.remove(os.path.join(self.directory, file))
-        except FileNotFoundError as err:
-            print(err)
+
+        source = os.path.join(r"C:\Users\Uchek\protocol", source_folder, file)
+        destination = os.path.join(self.directory, file)
 
         print(r'''
         copying {} 
         ---> into 
         {}
-        '''.format(os.path.join(self.directory[:self.directory.find(r"\Protocol")], "Protocol", folder_source, file), os.path.join(self.directory, file)))
-
-        shutil.copy(os.path.join(self.directory[:self.directory.find(
-            r"\Protocol")], "Protocol", folder_source, file), os.path.join(self.directory, file))
+        '''.format(source, destination))
+        print(os.getcwd())
+        shutil.copy(source, destination)
 
     def move_folder_resources(self, destination_path: str) -> None:
         '''the directory passed as a property will be used as a source path'''
@@ -117,3 +124,23 @@ class OperatingSystemInterface(object):
                         result.append(file)
 
         return result
+
+
+if __name__ == "__main__":
+    # now you can push all of the changes to github within the protocol folder as follows
+    for dir in os.listdir(r"C:\Users\Uchek\protocol"):
+        if dir == "jaguar":
+            pass
+        else:
+            with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
+                # simulate that you are in the sofia silent folder
+                op_sys.system("mkdir interfaces")
+                op_sys.system("echo > os_interface.py")
+            osi = OperatingSystemInterface(
+                os.path.join(r"C:\Users\Uchek\protocol", dir))
+            osi.copy_file_from_folder(r"interfaces\os_interface.py")
+            osi.copy_file_from_folder("workflow.py")
+
+    for dir in os.listdir(r"C:\Users\Uchek\protocol"):
+        with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
+            op_sys.system("python workflow.py g")

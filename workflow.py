@@ -213,6 +213,20 @@ def push_to_github(target_directory):
     os.system('git commit -m "make it better"')
     os.system("git push ")
 
+def initialise_npm_process(target_directory):
+    print(f"------------- cd into --> {target_directory} 🚕")
+    os.chdir(target_directory)
+    time.sleep(1)
+    print("------------- pull resent changes from github ↪️")
+    os.system("git pull")
+    time.sleep(1)
+    print("------------ making sure that the npm packages are installed ⚙️")
+    os.system("npm i")
+    time.sleep(1)
+    print("------------ starting the application")
+    os.system("npm start")
+    time.sleep(1)
+
 
 if __name__ == "__main__":
     amplify = AmplifyApplication()
@@ -249,9 +263,9 @@ if __name__ == "__main__":
         else:
             for file in sys.argv[2:]:
                 osi.replace_file(file)
-
     elif sys.argv[1] == "test":
         test_and_push_to_github(os.getcwd(),sys.argv[2])
-
+    elif sys.argv[1] == "npm":
+        initialise_npm_process(os.getcwd())
     else:
         push_to_github(os.getcwd())
