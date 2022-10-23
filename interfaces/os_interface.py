@@ -2,7 +2,6 @@ import os
 import shutil
 import platform
 
-
 class File(object):
     '''Object Description'''
 
@@ -45,7 +44,6 @@ class File(object):
         '''signature description'''
         os.remove(self.filename)
 
-
 class OperatingSystemInterface(object):
     '''
     you can access the interface like a resource manager such as
@@ -82,10 +80,6 @@ class OperatingSystemInterface(object):
 
         print(root_path)
         return root_path
-
-    def get_current_project(self, file) -> str:
-        '''file is __file__ Get current folder just before the name of the file'''
-        return os.path.dirname(file)
 
     def copy_file_from_folder(self, file, source_folder="jaguar"):
         '''
@@ -125,8 +119,7 @@ class OperatingSystemInterface(object):
 
         return result
 
-
-if __name__ == "__main__":
+def synchronize_os_interface_workflow_git():
     # now you can push all of the changes to github within the protocol folder as follows
     for dir in os.listdir(r"C:\Users\Uchek\protocol"):
         if dir == "jaguar":
@@ -144,3 +137,6 @@ if __name__ == "__main__":
     for dir in os.listdir(r"C:\Users\Uchek\protocol"):
         with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
             op_sys.system("python workflow.py g")
+
+if __name__ == "__main__":
+    synchronize_os_interface_workflow_git()
