@@ -77,7 +77,8 @@ class OperatingSystemInterface(object):
         else:
             root_path = os.path.join(*os.path.dirname(
                 __file__).split(r"\ ".replace(" ", ""))[:3])
-
+        
+        root_path = root_path.replace(":",r"\ ".replace(" ",""))
         print(root_path)
         return root_path
 
@@ -128,7 +129,7 @@ def synchronize_os_interface_workflow_git():
             with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
                 # simulate that you are in the sofia silent folder
                 op_sys.system("mkdir interfaces")
-                op_sys.system("echo > os_interface.py")
+                op_sys.system("del os_interface.py")
             osi = OperatingSystemInterface(
                 os.path.join(r"C:\Users\Uchek\protocol", dir))
             osi.copy_file_from_folder(r"interfaces\os_interface.py")
