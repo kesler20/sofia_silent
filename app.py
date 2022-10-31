@@ -14,10 +14,9 @@ from flask_cors import CORS
 from interfaces.os_interface import OperatingSystemInterface
 
 osi = OperatingSystemInterface()
-
 ROOT_DIR = os.path.dirname(os.getcwd())
 app = Flask(
-    __name__, 
+    __name__,
     template_folder=ps.join(ROOT_DIR, 'sofia_silent', 'templates'),
     static_folder=ps.join(ROOT_DIR, 'sofia_silent', 'static')
 )
@@ -37,20 +36,11 @@ def render_home_page():
     msg = request.data.decode()
     audio_engine = SoftwareInteligenzaArtificiale()
     audio_engine.run_context(msg)
+    return {"response": "okay"}
 
-    return { "response" :"okay"}
-
-def thread_function():
-    os.system(r'start code {}\protocol\sofia_silent_ui'.format(osi.gcu()))
-    # os.chdir(r'{}\protocol\sofia_silent_ui'.format(osi.gcu()))
-    # os.system('npm start')
-    # os.chdir(os.getcwd())
-
-#----------------------------------- COMMAND TO START-----------------------------------------------
+# ----------------------------------- COMMAND TO START-----------------------------------------------
 if __name__ == '__main__':
-    t = threading.Thread(target=thread_function)
-    t.start()
+    os.system(r'start code {}\protocol\sofia_silent_ui'.format(osi.gcu()))
     app.run(debug=True, port=5500)
      
-    
-    
+
