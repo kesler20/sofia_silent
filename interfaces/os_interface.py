@@ -78,7 +78,7 @@ class OperatingSystemInterface(object):
             root_path = os.path.join(*os.path.dirname(
                 __file__).split(r"\ ".replace(" ", ""))[:3])
         
-        root_path = root_path.replace(":",r"\ ".replace(" ",""))
+        root_path = root_path.replace(":",r":\ ".replace(" ",""))
         print(root_path)
         return root_path
 

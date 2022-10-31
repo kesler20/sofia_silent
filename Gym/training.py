@@ -13,7 +13,6 @@ EXERCISE_PATH = os.path.join(osi.gcu(), 'OneDrive', 'Documents', 'exercises.csv'
 TRAINING_PATH = os.path.join(osi.gcu(), 'OneDrive', 'Documents', 'training.csv')
 today = datetime.date.today().weekday()
 
-
 def construct_exercise(name):
     try:
         df = pd.read_csv(EXERCISE_PATH)

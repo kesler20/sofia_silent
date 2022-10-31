@@ -21,6 +21,7 @@ app = Flask(
     template_folder=ps.join(ROOT_DIR, 'sofia_silent', 'templates'),
     static_folder=ps.join(ROOT_DIR, 'sofia_silent', 'static')
 )
+
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.sqlite3'
