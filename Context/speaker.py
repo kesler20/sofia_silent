@@ -232,6 +232,14 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "check journal" in command:
             os.system("start https://github.com/uos-datavisdashboard ")
+        
+        elif 'journal dynamo' in command:
+            os.system(
+                "start https://eu-west-2.console.aws.amazon.com/dynamodbv2/home?region=eu-west-2#item-explorer?initialTagKey=&table=dynamoDBwiz-dev")
+
+        elif 'journal s3' in command:
+            os.system("start https://s3.console.aws.amazon.com/s3/buckets/s3wizapp152122-dev?region=eu-west-2&tab=objects")
+        
 
         elif "open journal" in command:
             os.system(

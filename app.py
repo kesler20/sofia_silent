@@ -1,3 +1,4 @@
+import time
 import threading
 import os
 from Context.speaker import SoftwareInteligenzaArtificiale
@@ -40,7 +41,8 @@ def render_home_page():
 
 # ----------------------------------- COMMAND TO START-----------------------------------------------
 if __name__ == '__main__':
-    os.system(r'start code {}\protocol\sofia_silent_ui'.format(osi.gcu()))
+    # os.system(r'start code {}\protocol\sofia_silent_ui'.format(osi.gcu()))
+    # time.sleep(1)
     app.run(debug=True, port=5500)
      
 
