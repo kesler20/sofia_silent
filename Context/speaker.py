@@ -330,6 +330,13 @@ class SoftwareInteligenzaArtificiale(object):
             self.gym_routine()
             os.system(
                 r'start excel {}/OneDrive/Documents/training.csv'.format(osi.gcu()))
+           
+        elif 'railway app' in command:
+            os.system("start https://railway.app/dashboard")
+            
+           
+        elif "amplify app" in command:
+            os.system("start https://eu-west-2.console.aws.amazon.com/amplify/home?region=eu-west-2#/d37f5mo61ci10i")
 
         elif 'good morning' in command:
             try:
