@@ -2,6 +2,7 @@ import os
 import shutil
 import platform
 
+
 class File(object):
     '''Object Description'''
 
@@ -44,6 +45,7 @@ class File(object):
         '''signature description'''
         os.remove(self.filename)
 
+
 class OperatingSystemInterface(object):
     '''
     you can access the interface like a resource manager such as
@@ -70,15 +72,15 @@ class OperatingSystemInterface(object):
         os.chdir(os.getcwd())
 
     def gcu(self) -> str:
-        '''Get the current user i.e. C:/Users/Uchek'''
+        '''Get the current user i.e. C:/Users/CBE-User 05'''
         if platform.system() == "Linux":
             root_path = os.path.join(*os.path.dirname(
                 __file__).split("/")[:5])
         else:
             root_path = os.path.join(*os.path.dirname(
                 __file__).split(r"\ ".replace(" ", ""))[:3])
-        
-        root_path = root_path.replace(":",r":\ ".replace(" ",""))
+
+        root_path = root_path.replace(":", r":\ ".replace(" ", ""))
         print(root_path)
         return root_path
 
@@ -89,7 +91,8 @@ class OperatingSystemInterface(object):
         the file which will be replace in the local directory has path ``os.path.join(self.directory,file)``
         '''
 
-        source = os.path.join(r"C:\Users\Uchek\protocol", source_folder, file)
+        source = os.path.join(
+            r"C:\Users\Uchek\protocol", source_folder, file)
         destination = os.path.join(self.directory, file)
 
         print(r'''
@@ -120,24 +123,5 @@ class OperatingSystemInterface(object):
 
         return result
 
-def synchronize_os_interface_workflow_git():
-    # now you can push all of the changes to github within the protocol folder as follows
-    for dir in os.listdir(r"C:\Users\Uchek\protocol"):
-        if dir == "jaguar":
-            pass
-        else:
-            with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
-                # simulate that you are in the sofia silent folder
-                op_sys.system("mkdir interfaces")
-                op_sys.system("del os_interface.py")
-            osi = OperatingSystemInterface(
-                os.path.join(r"C:\Users\Uchek\protocol", dir))
-            osi.copy_file_from_folder(r"interfaces\os_interface.py")
-            osi.copy_file_from_folder("workflow.py")
 
-    for dir in os.listdir(r"C:\Users\Uchek\protocol"):
-        with OperatingSystemInterface(os.path.join(r"C:\Users\Uchek\protocol", dir)) as op_sys:
-            op_sys.system("python workflow.py g")
 
-if __name__ == "__main__":
-    synchronize_os_interface_workflow_git()
