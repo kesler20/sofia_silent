@@ -23,7 +23,7 @@ GOOGLE_TASKS_TASKLISTS = {
 }
 
 month = int(datetime.datetime.now().strftime("%m"))
-day= int(datetime.datetime.now().strftime("%d"))
+day = int(datetime.datetime.now().strftime("%d"))
 
 
 class SoftwareInteligenzaArtificiale(object):
@@ -91,7 +91,7 @@ class SoftwareInteligenzaArtificiale(object):
         command = "what is the weather like today"
         os.system(
             f"start https://www.google.co.uk/search?q=={command.replace(' ','+')}")
-        
+
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
         today = datetime.date.today().weekday()
 
@@ -139,7 +139,6 @@ class SoftwareInteligenzaArtificiale(object):
         for task in daily_tasks:
             task_api.insert_task_to_tasklist(
                 task, 1, f'created at : {datetime.datetime.now()}', dt)
-        
 
     def create_task(self, task):
         dt = task_api.convert_to_RFC_datetime(2022, month, day, 23, 45)
@@ -232,14 +231,6 @@ class SoftwareInteligenzaArtificiale(object):
 
         elif "check journal" in command:
             os.system("start https://github.com/uos-datavisdashboard ")
-        
-        elif 'journal dynamo' in command:
-            os.system(
-                "start https://eu-west-2.console.aws.amazon.com/dynamodbv2/home?region=eu-west-2#item-explorer?initialTagKey=&table=dynamoDBwiz-dev")
-
-        elif 'journal s3' in command:
-            os.system("start https://s3.console.aws.amazon.com/s3/buckets/s3wizapp152122-dev?region=eu-west-2&tab=objects")
-        
 
         elif "open journal" in command:
             os.system(
@@ -330,13 +321,6 @@ class SoftwareInteligenzaArtificiale(object):
             self.gym_routine()
             os.system(
                 r'start excel {}/OneDrive/Documents/training.csv'.format(osi.gcu()))
-           
-        elif 'railway app' in command:
-            os.system("start https://railway.app/dashboard")
-            
-           
-        elif "amplify app" in command:
-            os.system("start https://eu-west-2.console.aws.amazon.com/amplify/home?region=eu-west-2#/d37f5mo61ci10i")
 
         elif 'good morning' in command:
             try:
@@ -346,13 +330,14 @@ class SoftwareInteligenzaArtificiale(object):
             self.webcontroller.initialize_workflow()
 
         elif 'calendar' in command:
-            os.system(r'start https://calendar.google.com/calendar/u/0/r?tab=kc')
+            os.system(
+                r'start https://calendar.google.com/calendar/u/2/r?tab=kc&pli=1')
 
         elif 'excel' in command:
             os.system('start excel.exe')
 
         elif 'open write folder' in command:
-            os.system(r'start code {}/Protocol/write'.format(os.gcu()))
+            os.system(r'start code {}/Protocol/write'.format(osi.gcu()))
 
         elif 'onenote' in command:
             os.system('start onenote')
@@ -361,12 +346,24 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace('tasks ', '')
             self.create_task(command)
 
+        elif 'generate test' in command:
+            os.system(
+                'start code {}/Protocol/automated_test_generator'.format(osi.gcu()))
+
+        elif 'journal dynamo' in command:
+            os.system(
+                "start https://eu-west-2.console.aws.amazon.com/dynamodbv2/home?region=eu-west-2#item-explorer?initialTagKey=&table=dynamoDBwiz-dev")
+
+        elif 'journal s3' in command:
+            os.system(
+                "start https://s3.console.aws.amazon.com/s3/buckets/s3wizapp152122-dev?region=eu-west-2&tab=objects")
+
         elif 'take notes' in command:
             os.system(
                 r'start code {}\Protocol\Config_settings'.format(osi.gcu()))
 
         elif 'document' in command:
-            os.chdir("C://Users//CBE-User 05//OneDrive//Documents")
+            os.chdir(r"{}/OneDrive//Documents".format(osi.gcu()))
             os.system("start .")
             os.chdir(os.getcwd())
 
@@ -428,10 +425,17 @@ class SoftwareInteligenzaArtificiale(object):
             command = command.replace("open explorer", "")
             self.launch_folder_explorer(command)
 
+        elif 'railway app' in command:
+            os.system("start https://railway.app/dashboard")
+
+        elif "amplify app" in command:
+            os.system(
+                "start https://eu-west-2.console.aws.amazon.com/amplify/home?region=eu-west-2#/d37f5mo61ci10i")
+
         elif 'open commands' in command:
             # sofia commands
             os.system(
-                'start https://github.com/kesler20/sofia_silent/blob/master/Context/speaker.py')
+                'start https://github.com/kesler20/sofia/blob/master/Context/speaker.py')
 
         elif 'router' in command:
             os.system(r'start https://main.d2lxk97p0eyatl.amplifyapp.com/')
@@ -501,7 +505,7 @@ class SoftwareInteligenzaArtificiale(object):
         except speech_recognition.UnknownValueError:
             engine.say(" sorry I didn't get that")
             engine.runAndWait()
-    
+
     def run_loop(self, listener: speech_recognition.Recognizer):
         stop_command = False
         while not stop_command:
