@@ -387,7 +387,7 @@ class GithubRepository(object):
 
         if _type == "py":
             self.workflow_ui.pp("running tests using pytest 🐍🧪")
-            os.system("python -m pytest")
+            os.system("python -m pytest src/tests")
         
         self.workflow_ui.pp("formatting code using prettier ✨")
         os.system("prettier -w .")
@@ -439,7 +439,7 @@ class GithubRepository(object):
     def push_new_branch_to_github(self, target_directory):
         os.chdir(target_directory)
         self.workflow_ui.pp("making a new branch 🌳")
-        os.system("git -b checkout new-feature")
+        os.system("git checkout -b new-feature")
         os.system("git add . ")
         os.system(f'git commit -m "{self.style_commit_message("c add new feature")}"')
         self.workflow_ui.pp("publishing the new branch to github ⌚")
